@@ -44,13 +44,15 @@ Promise_all<number>([soon(1), soon(2), soon(3)])
   )
   .then(console.log);
 
-Promise_all([soon(1), Promise.reject("X"), soon(3)]).then((array) => {
-  pipe(
-    array,
-    E.fold(
-      (err) =>
-        err.message !== "X" ? `"Unexpected failure:", ${err}` : `${err}`,
-      (res) => `${JSON.stringify(res)}`
+Promise_all([soon(1), Promise.reject("X"), soon(3)])
+  .then((array) =>
+    pipe(
+      array,
+      E.fold(
+        (err) =>
+          err.message !== "X" ? `"Unexpected failure:", ${err}` : `${err}`,
+        (res) => `${JSON.stringify(res)}`
+      )
     )
-  );
-});
+  )
+  .then(console.log);
