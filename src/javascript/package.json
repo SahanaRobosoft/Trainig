@@ -1,0 +1,12 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test2": "node promise.js",
+    "test1": "node scalpel.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

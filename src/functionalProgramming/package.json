@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "fp-ts": "^2.12.3",
+    "ts-node": "^10.9.1"
+  },
+  "name": "functionalprogramming",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test1": "ts-node scalpel.ts",
+    "test2": "ts-node promise.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
