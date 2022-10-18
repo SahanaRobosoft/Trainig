@@ -1,7 +1,7 @@
 declare var require: any;
 import { string } from "fp-ts";
 import * as T from "fp-ts/lib/Task";
-import * as E from "fp-ts/lib/Either";
+import * as Either from "fp-ts/lib/Either";
 import * as TE from "fp-ts/lib/TaskEither";
 import { pipe } from "fp-ts/lib/function";
 
@@ -151,16 +151,17 @@ function locateScalpel2(nest: { name: string }) {
 
   return getScalpel(nest.name);
 }
+const rightValue = Either.right("value");
 
 locateScalpel2(bigOak)
   .then((e: any) =>
     pipe(
       e,
-      E.fold(
+      Either.fold(
         (error: Error) => `${error.message}`,
         (result) => result
       ),
-      E.flatten
+      Either.flatten
     )
   )
   .then(console.log);
